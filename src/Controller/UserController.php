@@ -72,6 +72,6 @@ class UserController extends AbstractController
 
     public static function userConnected(): bool
     {
-        return isset($_SESSION['user']) && null !== $_SESSION['user']->getId();
+        return isset($_SESSION['user']) && null !== $_SESSION['user']->id;
     }
 }

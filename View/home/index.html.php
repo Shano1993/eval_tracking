@@ -4,9 +4,7 @@ use App\Controller\UserController;
 
 if (isset($data['userProject'])) {
     $projects = $data['userProject'];
-}
-
-?>
+} ?>
 
 <!doctype html>
 <html lang="fr">
@@ -37,19 +35,41 @@ if (isset($data['userProject'])) {
             foreach ($projects as $project) { ?>
                 <div class="project">
                     <div class="titleProject">
-                        <h3><?= $project->title ?></h3>
-                        <i class="fa fa-trash"></i>
+                        <a href="/?c=project&a=view-project&id=<?= $project->id ?>" class="title"><?= $project->title ?></a>
+                        <a href="/?c=home&a=delete-project&id=<?= $project->id ?>"><i class="fa fa-trash time"></i></a>
                     </div>
                     <div class="task">
-                        <form action="?c=home&a=create-task" method="post">
-                            <input type="text" name="title" id="taskName">
-                            <input type="submit" name="save" value="+ Ajouter une tâche <?= $project->id ?>">
-                        </form>
+                        <form action="/?c=home&a=create-task&id=<?= $project->id ?>" method="post">
+                            <input type="text" name="taskName" id="taskName">
+                            <input type="submit" name="save" value="Ajouter une tâche" class="inputSubmit">
+                        </form> <?php
+                            foreach ($project->ownTaskList as $task) { ?>
+                                <div class="tasks">
+                                    <div class="taskView">
+                                        <p><?= $task->taskName ?></p>
+                                        <div class="logo">
+                                            <i class="fa fa-history"></i>
+                                        </div>
+                                    </div>
+                                </div> <?php
+                            } ?>
                     </div>
-                </div><?php
+                    <div class="divView">
+                        <div class="divTime">
+                            <i class="fa fa-calendar time"></i>
+                            <span class="date">Date Time</span>
+                        </div>
+                        <div class="divTime">
+                            <i class="fa fa-clock-o time"></i>
+                            <span class="total">Total Time</span>
+                        </div>
+                    </div>
+                </div> <?php
             }
         } ?>
     </div>
 
 </body>
 </html>
+
+

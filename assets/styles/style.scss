@@ -18,13 +18,13 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin: 2rem;
 }
 
 h2 {
   font-family: vars.$font-mukta;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 2rem;
 }
 
@@ -33,7 +33,7 @@ h2 {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.12);
 
   a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-decoration-line: none;
     color: blue;
     padding: 0.5rem 1.5rem;
@@ -53,20 +53,94 @@ h2 {
     margin: 2rem;
     padding: 1.5rem;
 
+    .time {
+      font-size: 2.5rem;
+      color: red;
+    }
+
+    .divView {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .divTime {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .time {
+          font-size: 4rem;
+          color: blue;
+        }
+
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
     .titleProject {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
 
-      h3 {
-        font-size: 1.8rem;
+      .title {
+        font-size: 2.2rem;
+        font-family: vars.$font-mukta;
         padding: 1rem;
+        color: black;
+        text-decoration-line: none;
+      }
+    }
+  }
+
+  .task {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 35rem;
+
+    input[type=text] {
+      width: 60%;
+      margin: 0.5rem;
+      padding: 0.5rem 0;
+      border: none;
+      border-radius: 0.2rem;
+    }
+
+    .inputSubmit {
+      width: 30%;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #264078;
+      border: none;
+      cursor: pointer;
+      color: #F9F9F9;
+      border-radius: 0.2rem;
+    }
+
+    .tasks {
+      margin: 0.5rem;
+      padding: 1rem;
+      background-color: #F9F9F9;
+
+      .taskView {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        font-size: 1.4rem;
+
+        .logo {
+          font-size: 2rem;
+          color: blue;
+        }
       }
 
-      i {
-        font-size: 2rem;
-        color: red;
+      .taskView:nth-child(odd) {
+        background-color: rgba(112, 166, 253, 0.21);
       }
     }
   }
@@ -116,6 +190,71 @@ h2 {
 
     p:first-child {
       color: #70a6fd;
+    }
+  }
+}
+
+#project {
+  border: 1rem solid rgba(0, 80, 255, 0.7);
+  background-color: rgba(0, 81, 255, 0.09);
+  border-radius: 0.5rem;
+  display: flex;
+  width: 80%;
+  margin: 3rem auto;
+  padding-bottom: 2.5rem;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-family: vars.$font-mukta;
+  }
+
+  #taskView {
+    border: 0.1rem solid black;
+    width: 90%;
+    height: 55vh;
+    margin: 0 auto;
+  }
+
+  #totalWatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #detail {
+    border: 0.1rem solid black;
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    padding: 2rem;
+
+    p {
+      font-size: 1.8rem;
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: red;
+      margin-right: 1rem;
+    }
+  }
+
+  #addTask {
+    input[type=text] {
+      padding: 0.5rem 0;
+      border: none;
+      border-radius: 0.2rem;
+    }
+    .inputSubmit {
+      width: 40%;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: #264078;
+      border: none;
+      cursor: pointer;
+      color: #F9F9F9;
+      border-radius: 0.2rem;
     }
   }
 }

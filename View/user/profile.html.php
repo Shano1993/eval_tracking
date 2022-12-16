@@ -19,6 +19,10 @@
 
     <div id="profileUser">
         <div>
+            <p>Identifiant utilisateur</p>
+            <p><?= $_SESSION['user']->id ?></p>
+        </div>
+        <div>
             <p>Adresse Email</p>
             <p><?= $_SESSION['user']->email ?></p>
         </div>

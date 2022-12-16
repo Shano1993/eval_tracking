@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use RedBeanPHP\R;
+
 abstract class AbstractController
 {
     abstract public function index();
