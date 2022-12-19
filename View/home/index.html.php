@@ -48,7 +48,9 @@ if (isset($data['userProject'])) {
                                     <div class="taskView">
                                         <p><?= $task->taskName ?></p>
                                         <div class="logo">
-                                            <i class="fa fa-history"></i>
+                                            <span class="spanTimer"></span>
+                                            <span><i class="fa fa-play playTimer"></i></span>
+                                            <span><i class="fa fa-pause pausedTimer"></i></span>
                                         </div>
                                     </div>
                                 </div> <?php

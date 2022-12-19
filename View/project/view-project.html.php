@@ -18,8 +18,31 @@ if (isset($data['project'])) {
     <div id="project">
         <h1><?= $project->title ?></h1>
 
-        <div id="taskView">
-
+        <div id="taskView"> <?php
+            foreach ($project->ownTaskList as $task) { ?>
+                    <div id="task">
+                        <div class="view">
+                            <p><?= $task->taskName ?></p>
+                        </div>
+                        <div class="view">
+                            <div class="viewSpan">
+                                <i class="fa fa-calendar"></i>
+                                <span>19/12/2022</span>
+                            </div>
+                        </div>
+                        <div class="view">
+                            <div class="viewSpan">
+                                <i class="fa fa-clock-o"></i>
+                                <span>0 H</span>
+                            </div>
+                        </div>
+                        <div class="view">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-trash red"></i>
+                        </div>
+                    </div>
+                 <?php
+            } ?>
         </div>
         <div id="detail">
             <div id="totalWatch">

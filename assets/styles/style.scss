@@ -214,6 +214,42 @@ h2 {
     width: 90%;
     height: 55vh;
     margin: 0 auto;
+
+    #task {
+      display: flex;
+      justify-content: space-around;
+
+      .view {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        p {
+          font-size: 1.5rem;
+        }
+
+        div > span {
+          font-size: 1.5rem;
+        }
+
+        i {
+          font-size: 2rem;
+          margin: 1rem;
+          color: blue;
+        }
+
+        .viewSpan {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .red {
+          color: red;
+        }
+      }
+    }
   }
 
   #totalWatch {
@@ -257,4 +293,12 @@ h2 {
       border-radius: 0.2rem;
     }
   }
+}
+
+.greenTimer {
+  color: green;
+}
+
+.redTimer {
+  color: red;
 }

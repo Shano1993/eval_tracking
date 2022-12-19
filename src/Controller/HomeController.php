@@ -24,6 +24,9 @@ class HomeController extends  AbstractController
             $user = R::findOne('user', 'id=?', [$_SESSION['user']->id]);
             $project = R::dispense('project');
             $project->title = self::sanitizeString(self::getField('title'));
+            if (self::getField('title') === "") {
+                $project->title = "Projet sans nom";
+            }
             $user->ownProjectList[] = $project;
 
             R::store($user);
@@ -48,8 +51,12 @@ class HomeController extends  AbstractController
             $user = R::findOne('user', 'id=?', [$_SESSION['user']->id]);
             $task = R::dispense('task');
             $task->taskName = self::sanitizeString(self::getField('taskName'));
+            if (self::getField('taskName') === "") {
+                $task->taskName = "Tâche sans nom";
+            }
             $project->ownTaskList[] = $task;
             R::store($project);
+            self::location('c=home');
         }
         self::render('home/index', [
             'userProject' => $user->ownProjectList
