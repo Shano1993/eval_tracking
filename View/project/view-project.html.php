@@ -21,7 +21,7 @@ if (isset($data['project'])) {
         <div id="taskView"> <?php
             foreach ($project->ownTaskList as $task) { ?>
                     <div id="task">
-                        <div class="view">
+                        <div class="view task">
                             <p><?= $task->taskName ?></p>
                         </div>
                         <div class="view">
@@ -37,8 +37,8 @@ if (isset($data['project'])) {
                             </div>
                         </div>
                         <div class="view">
-                            <i class="fa fa-edit"></i>
-                            <i class="fa fa-trash red"></i>
+                            <i class="fa fa-edit editTask"></i>
+                            <a href="/?c=task&a=delete-task&id=<?= $task->id ?>"><i class="fa fa-trash red"></i></a>
                         </div>
                     </div>
                  <?php
