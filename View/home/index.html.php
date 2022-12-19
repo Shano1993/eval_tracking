@@ -17,7 +17,10 @@ if (isset($data['userProject'])) {
 </head>
 <body>
 
-    <h2>Page d'accueil</h2>
+    <h2>Page d'accueil</h2> <?php
+        if (!UserController::userConnected()) { ?>
+            <h2>Veuillez vous connectez pour pouvoir utiliser l'appliaction</h2> <?php
+        } ?>
 
     <?php
     if (UserController::userConnected()) { ?>
